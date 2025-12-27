@@ -216,7 +216,7 @@ header {
 }
 
 /* =========================
-   Seção Sobre Mim
+   Secção Sobre Mim
 ========================= */
 #sobre {
     display: flex;
@@ -227,14 +227,22 @@ header {
 }
 
 #sobre img {
+    width: 200px;
+    height: 200px;
     border-radius: 50%;
-    max-width: 150px;
-    height: auto;
+    object-fit: cover;
+    flex: 0 0 auto; /* impede esticar */
 }
 
 #sobre .bio {
     flex: 1;
 }
+
+.video-sobre {
+        width: 200px;       /* largura do vídeo */
+        height: 300px;       /* altura ajusta automaticamente para manter proporção */
+        border-radius: 8px; /* opcional: cantos arredondados */
+    }
 
 @media (max-width: 768px) {
     #sobre {
@@ -245,15 +253,17 @@ header {
     }
 
     #sobre img {
-        max-width: 120px;
-        width: 50%;
-        height: auto;
-        margin: 0 auto;
+        width: 120px;          /* largura fixa */
+        height: 120px;         /* altura igual à largura */
+        object-fit: cover;     /* corta a imagem mantendo proporção */
+        border-radius: 50%;    /* transforma em círculo perfeito */
+        margin: 0 auto;        /* centraliza a imagem */
+        display: block;
     }
 }
 
 /* =========================
-   Seção Formação
+   Secção Formação
 ========================= */
 #educacao {
     background-color: #f2f2f2;
@@ -282,10 +292,10 @@ header {
 }
 
 #educacao .formacao-item img {
-    width: 80px;
+    width: 150px;          /* logo pequeno */
     height: auto;
     border-radius: 8px;
-    flex-shrink: 0;
+    flex: 0 0 auto;       /* impede esticar */
 }
 
 #educacao .formacao-item p {
@@ -293,6 +303,7 @@ header {
     line-height: 1.4;
 }
 
+/* ---------- Mobile ---------- */
 @media (max-width: 768px) {
     #educacao .formacao-item {
         flex-direction: column;
@@ -301,9 +312,13 @@ header {
         gap: 10px;
     }
 
-    #educacao .formacao-item img,
     #educacao .formacao-item p {
         flex: 1 1 100%;
+    }
+
+    #educacao .formacao-item img {
+        width: 150px;      /* mantém pequeno no mobile */
+        flex: 0 0 auto;
     }
 }
 
@@ -362,8 +377,34 @@ figure img {
     height: 200px;
     object-fit: cover;
 }
+
 /* =========================
-   Seção Contacto
+   Ajustes para mobile
+========================= */
+@media (max-width: 768px) {
+    .projetos-grid {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .projetos-grid figure {
+        width: 90%;         /* ocupa quase toda a largura do container */
+    }
+
+    .projetos-grid img {
+        width: 100%;
+        height: auto;       /* mantém proporção da imagem */
+    }
+
+    .projeto-card {
+        min-width: 90%;     /* cards mais adaptáveis ao mobile */
+        margin-bottom: 20px;
+    }
+}
+
+/* =========================
+   Secção Contacto
 ========================= */
 #contacto {
     background-color: #f2f2f2;

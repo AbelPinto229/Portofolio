@@ -4,16 +4,29 @@
 // Seleciona o formulário pelo ID "formContacto"
 const formContacto = document.getElementById('formContacto');
 
-if (formContacto) {
-    // Adiciona um ouvinte de evento para quando o formulário for enviado
+if (formContacto) { // Verifica se o formulário existe no DOM
+    // Adiciona um listener para o evento "submit" do formulário
     formContacto.addEventListener('submit', function(event) {
-        event.preventDefault(); // Impede reload da página ao submeter
-        alert("Obrigado pelo contacto! Responderei em breve."); // Confirmação ao utilizador
-        formContacto.reset(); // Limpa todos os campos do formulário
+        event.preventDefault(); // Evita que a página recarregue ao submeter o formulário
+
+        // Envia os dados do formulário usando EmailJS
+        // Parâmetros:
+        // 1. 'service_br404kd' -> ID do serviço que configuraste no EmailJS
+        // 2. 'YOUR_TEMPLATE_ID' -> ID do template que configuraste no EmailJS (substitui pelo teu)
+        // 3. 'this' -> refere-se ao formulário atual e permite enviar todos os campos automaticamente
+        emailjs.sendForm('service_br404kd', 'YOUR_TEMPLATE_ID', this)
+        .then(function() { // Se o envio for bem-sucedido
+            alert("Obrigado pelo contacto! Responderei em breve."); // Mensagem de confirmação para o utilizador
+            formContacto.reset(); // Limpa todos os campos do formulário
+        }, function(error) { // Se ocorrer algum erro durante o envio
+            alert("Ops! Algo correu mal. Tenta novamente."); // Alerta o utilizador
+            console.error('Erro EmailJS:', error); // Mostra detalhes do erro no console para debugging
+        });
     });
-} else {
-    console.error("Formulário 'formContacto' não encontrado no DOM.");
+} else { // Caso o formulário não exista no DOM
+    console.error("Formulário 'formContacto' não encontrado no DOM."); // Log de erro no console
 }
+
 
 /* =========================
    Menu Hamburger Mobile
