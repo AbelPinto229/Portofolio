@@ -307,8 +307,8 @@ header {
 @media (max-width: 768px) {
     #educacao .formacao-item {
         flex-direction: column;
-        width: 100%;
         text-align: center;
+        width: 100%;
         gap: 10px;
     }
 
@@ -320,6 +320,9 @@ header {
         width: 150px;      /* mantém pequeno no mobile */
         flex: 0 0 auto;
     }
+     #educacao h2 {
+        text-align: center;
+}
 }
 
 /* =========================
@@ -401,6 +404,9 @@ figure img {
         min-width: 90%;     /* cards mais adaptáveis ao mobile */
         margin-bottom: 20px;
     }
+      #projetos h2 {
+        text-align: center;
+}
 }
 
 /* =========================
@@ -476,11 +482,9 @@ figure img {
     .contacto-container {
         padding: 0 15px;
     }
-
-    #contacto h2 {
-        font-size: 2rem;
-        margin-bottom: 30px;
-    }
+  #contacto h2 {
+    text-align: center;
+}
 }
 
 /* =========================
