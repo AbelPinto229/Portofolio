@@ -1,0 +1,627 @@
+/* =========================
+   Variáveis Globais
+========================= */
+:root {
+    --navbar-height: 80px; /* Altura aproximada da navbar, usada para scroll margin */
+}
+
+/* =========================
+   Reset Geral
+========================= */
+* {
+    box-sizing:     border-box; /* Inclui padding e border na largura */
+    margin: 0;
+    padding: 0;
+}
+
+/* =========================
+   HTML e Body
+========================= */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #d3d3d3;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth; /* Rolagem suave */
+}
+
+/* =========================
+   Main e Seções Gerais
+========================= */
+main {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+}
+
+main section {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #d3d3d3;
+    scroll-margin-top: var(--navbar-height);
+}
+
+main section:first-of-type {
+    padding-top: 0;
+}
+
+main section h2,
+main section p {
+    flex: 1 1 300px;
+    margin: 0;
+}
+
+main section img,
+main section video {
+    flex: 1 1 300px;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+/* =========================
+   Header e Navbar
+========================= */
+header {
+    position: relative;
+}
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(44, 62, 80, 0.75);
+    backdrop-filter: blur(6px);
+}
+
+.nav-left, .nav-right {
+    display: flex;
+    gap: 20px;
+}
+
+.nav-left {
+    justify-content: flex-start;
+}
+
+.nav-right {
+    justify-content: flex-end;
+}
+
+.nav-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 1.2;
+    color: white;
+}
+
+.nav-center .nome {
+    font-size: 1.8rem;
+    font-weight: bold;
+}
+
+.nav-center .subtitulo {
+    font-size: 0.9rem;
+    font-weight: normal;
+    opacity: 0.9;
+}
+
+.navbar ul {
+    list-style: none;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   Hamburger Mobile - Menu
+========================= */
+@media (max-width: 768px) {
+    /* Mostra o hamburger no mobile */
+    .hamburger {
+        display: block;
+        position: relative;
+        z-index: 20;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+
+    /* Esconde nav-left e nav-right por padrão */
+    .nav-left,
+    .nav-right {
+        display: none;                 /* escondido inicialmente */
+        flex-direction: column;        /* links em coluna */
+        gap: 1rem;                     /* espaçamento entre links */
+        background-color: #fff;        /* fundo branco */
+        padding: 1rem 2rem;            /* padding interno */
+        border-radius: 8px;            /* cantos arredondados */
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1); /* sombra */
+        position: absolute;            /* posicionamento absoluto */
+        top: 100%;                     /* abaixo da navbar */
+        left: 50%;                     /* centralizado horizontalmente */
+        transform: translateX(-50%);   /* centraliza de fato */
+        width: 90%;                    /* ocupa quase toda largura */
+        max-width: 400px;              /* limita largura máxima */
+        z-index: 10;                   /* acima de outros elementos */
+        text-align: center;            /* links centralizados */
+    }
+
+    /* Mostra os menus ao clicar no hamburger */
+    .nav-left.active,
+    .nav-right.active {
+        display: flex;
+    }
+
+    /* Links do menu mobile */
+    .nav-left a,
+    .nav-right a {
+        color: #000;                   /* links em preto */
+        font-weight: bold;
+        text-decoration: none;
+        padding: 5px 0;
+    }
+
+    /* Feedback ao passar o mouse */
+    .nav-left a:hover,
+    .nav-right a:hover {
+        text-decoration: underline;
+    }
+}
+
+/* =========================
+   Hamburger Desktop - Esconde
+========================= */
+@media (min-width: 769px) {
+    .hamburger {
+        display: none; /* hamburger escondido no desktop */
+    }
+
+    .nav-left,
+    .nav-right {
+        display: flex;           /* menus sempre visíveis */
+        flex-direction: row;     /* links em linha */
+        gap: 1rem;
+    }
+}
+
+/* =========================
+   Seção Sobre Mim
+========================= */
+#sobre {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 50px 20px;
+    background-color: #d3d3d3;
+}
+
+#sobre img {
+    border-radius: 50%;
+    max-width: 150px;
+    height: auto;
+}
+
+#sobre .bio {
+    flex: 1;
+}
+
+@media (max-width: 768px) {
+    #sobre {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 30px 15px;
+    }
+
+    #sobre img {
+        max-width: 120px;
+        width: 50%;
+        height: auto;
+        margin: 0 auto;
+    }
+}
+
+/* =========================
+   Seção Formação
+========================= */
+#educacao {
+    background-color: #f2f2f2;
+    padding: 50px 20px;
+    width: 100%;
+}
+
+#educacao h2 {
+    margin-bottom: 30px;
+}
+
+#educacao .detalhes {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+#educacao .formacao-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#educacao .formacao-item:nth-child(3) {
+    gap: 10px;
+}
+
+#educacao .formacao-item img {
+    width: 80px;
+    height: auto;
+    border-radius: 8px;
+    flex-shrink: 0;
+}
+
+#educacao .formacao-item p {
+    margin: 0;
+    line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+    #educacao .formacao-item {
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        gap: 10px;
+    }
+
+    #educacao .formacao-item img,
+    #educacao .formacao-item p {
+        flex: 1 1 100%;
+    }
+}
+
+/* =========================
+   Galeria de Projetos
+========================= */
+#projetos {
+    padding: 50px 20px;
+    width: 100%;
+}
+
+.projetos-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.projetos-grid figure {
+    width: 300px;
+    text-align: center;
+}
+
+.projetos-grid img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.projeto-card {
+    flex: 1;
+    min-width: 250px;
+    display: flex;
+    flex-direction: column;
+}
+
+.projeto-card .descricao {
+    flex-grow: 1;
+}
+
+.destaque {
+    border: 2px solid #3b0d8b;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.tech-icons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 6px;
+}
+
+figure img {
+    width: 100%;
+    max-width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+/* =========================
+   Seção Contacto
+========================= */
+#contacto {
+    background-color: #f2f2f2;
+    width: 100vw;
+    padding: 40px 0;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+#contacto .contacto-container {
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#contacto form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+#contacto h2 {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#contacto form label {
+    font-weight: bold;
+    color: #34495e;
+    margin-top: 10px;
+}
+
+#contacto form input,
+#contacto form select,
+#contacto form textarea {
+    padding: 14px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 5px;
+}
+
+#contacto form button {
+    padding: 14px;
+    background-color: #2c3e50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 20px;
+}
+
+#contacto form button:hover {
+    background-color: #34495e;
+}
+
+@media (max-width: 768px) {
+    #contacto {
+        padding: 60px 0;
+    }
+
+    .contacto-container {
+        padding: 0 15px;
+    }
+
+    #contacto h2 {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+}
+
+/* =========================
+   Mapa e Informações de Localização
+========================= */
+.mapa-contactos {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* duas colunas no desktop */
+    gap: 30px;
+    width: 100%;
+    margin-top: 30px;
+}
+
+/* Coloca a lista de informações no centro vertical da coluna */
+.info-localizacao {
+    list-style: none; /* remove marcadores */
+    font-size: 1.1rem;
+    padding: 0;
+    margin: 0;
+    text-align: center; /* horizontalmente centrado */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* verticalmente centrado */
+    height: 100%; /* ocupa toda a altura da coluna */
+}
+
+.mapa-contactos iframe {
+    width: 100%;
+    height: 300px;
+    border: 0;
+    padding: 20px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .mapa-contactos {
+        grid-template-columns: 1fr; /* 1 coluna no mobile */
+        gap: 20px;
+    }
+
+    .info-localizacao {
+        text-align: center;
+        justify-content: center; /* mantém verticalmente centrado */
+        height: auto; /* mobile não precisa ocupar altura inteira */
+    }
+}
+
+@media (max-width: 768px) {
+    .mapa-contactos {
+        grid-template-columns: 1fr; /* 1 coluna no mobile */
+        gap: 20px;
+    }
+
+    /* mantém o texto centralizado no mobile */
+    .info-localizacao {
+        text-align: center;
+    }
+}
+
+/* =========================
+   Footer
+========================= */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.footer-icons img {
+    width: 22px;
+    filter: invert(1);
+    transition: transform 0.3s;
+}
+
+.footer-icons img:hover {
+    transform: scale(1.2);
+}
+
+/* =========================
+   Responsivo Geral
+========================= */
+@media (max-width: 768px) {
+    main section,
+    main section h2,
+    main section p,
+    main section img,
+    main section video {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+    }
+
+    .projetos-grid figure {
+        width: 100% !important;
+    }
+
+    #educacao .formacao-item {
+        flex-direction: column !important;
+        width: 100% !important;
+        text-align: center !important;
+        gap: 10px !important;
+    }
+
+    #educacao .formacao-item img,
+    #educacao .formacao-item p {
+        flex: 1 1 100% !important;
+        max-width: 100% !important;
+    }
+
+    .navbar {
+        grid-template-columns: 1fr !important;
+        text-align: center !important;
+        padding: 15px 10px !important;
+    }
+
+    .nav-left,
+    .nav-right {
+        justify-content: center !important;
+        gap: 15px !important;
+        margin-bottom: 10px !important;
+    }
+
+    .nav-center {
+        margin-bottom: 10px !important;
+    }
+
+    #contacto {
+        padding: 60px 15px !important;
+    }
+
+    #contacto h2 {
+        font-size: 2rem !important;
+        margin-bottom: 40px !important;
+    }
+
+    .mapa-contactos {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+}
+/* =========================
+   Links Mobile Específicos
+========================= */
+
+/* Por padrão, esconde o link no desktop */
+.mobile-only {
+    display: none;
+}
+
+/* No mobile (até 768px) mostra o link */
+@media (max-width: 768px) {
+    .mobile-only {
+        display: list-item; /* ou flex, conforme o menu */
+    }
+}
+/* =========================
+   Ícones de Tecnologias
+========================= */    
+.tech-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.tech-icons img {
+  transition: transform 0.3s ease;
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+}
+
+.tech-icons img:hover {
+  transform: scale(1.2);
+}
+
+

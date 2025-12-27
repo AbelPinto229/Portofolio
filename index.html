@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link para o ficheiro CSS externo -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link para o ficheiro JS externo com defer para carregar após o HTML -->
+    <script defer src="script.js"></script>
+    <title>Portofólio Abel Pinto | UPSKILL 229</title>
+</head>
+<body>
+ <!-- Header / Navegação principal -->
+    <header>
+    <nav class="navbar">
+    <ul class="nav-left">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#sobre">Sobre Mim</a></li>
+    </ul>
+
+    <div class="nav-center">
+        <span class="nome">Abel Pinto</span>
+        <span class="subtitulo">Futuro Web Developer</span>
+    </div>
+
+<!-- Botão hamburger -->
+    <button class="hamburger" aria-label="Abrir menu">&#9776;</button>
+
+    <ul class="nav-right">
+        <li class="mobile-only"><a href="#home">Home</a></li>
+        <li class="mobile-only"><a href="#sobre">Sobre Mim</a></li>
+        <li><a href="#educacao">Formação</a></li>
+        <li><a href="#projetos">Projetos</a></li>
+        <li><a href="#contacto">Contactos</a></li>
+    </ul>
+</nav>
+
+    <!-- Conteúdo principal do portfólio -->
+    <main>
+        <!-- Secção Home -->
+        <section id="home"></section>
+
+        <!-- Secção Sobre Mim -->
+        <section id="sobre">
+            <h2>Sobre Mim</h2>
+            <!-- Foto de perfil com alt descritivo -->
+            <img src="https://placehold.co/150x150" alt="Foto de perfil de Abel a sorrir" width="150">
+            <!-- Vídeo de apresentação opcional -->
+            <video src="meu_video.mp4" controls width="300">
+                O teu navegador não suporta vídeo.
+            </video>
+            <!-- Pequena descrição pessoal -->
+            <p>Desenvolvedor Front-end em formação | 34 anos | Sesimbra, Portugal</p>
+        </section>
+
+        <!-- Secção Formação Académica -->
+        <section id="educacao">
+            <h2>Formação</h2>
+            <div class="detalhes">
+                <!-- Cada item de formação com texto e logo -->
+                <div class="formacao-item">
+                    <p>Universidade ABC – Mestrado em Educação Física – 2022</p>
+                    <img src="logo-universidade.jpg" alt="Logo Universidade ABC">
+                </div>
+                <div class="formacao-item">
+                    <p>Curso Microsoft Azure Administrator – Certificação em andamento – 2025</p>
+                    <img src="logo-curso.jpg" alt="Logo Curso Azure">
+                </div>
+                <!-- Entradas repetidas podem ser removidas se não forem intencionais -->
+                <div class="formacao-item">
+                    <p>Curso Microsoft Azure Administrator – Certificação em andamento – 2025</p>
+                    <img src="logo-curso.jpg" alt="Logo Curso Azure">
+                </div>
+                <div class="formacao-item">
+                    <p>Curso Microsoft Azure Administrator – Certificação em andamento – 2025</p>
+                    <img src="logo-curso.jpg" alt="Logo Curso Azure">
+                </div>
+            </div>
+        </section>
+
+        <!-- Secção Projetos -->
+        <section id="projetos">
+            <h2>Projetos</h2>
+            <div class="projetos-grid">
+                <!-- Cada projeto com imagem, descrição e tecnologias usadas -->
+                <figure>
+                     <a href="https://github.com/dsanches06/Mini_Projeto_I_TechStore/blob/main/README.md" target="_blank">
+                    <img src="img/preview-techstore.png" alt="Projeto 1 - TechStore">
+                    </a>
+                    <figcaption>Projeto 1: TechStore</figcaption>
+                    <div class="tech-icons">
+                        <div class="tech-icons">
+                            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                        </div>
+                    </div>
+                </figure>
+                <figure>
+                     <a href="https://teu-link-do-projeto.com" target="_blank"></a>
+                    <img src="img/preview-portofolio.PNG" alt="Projeto 2">
+                    </a>
+                    <figcaption>Projeto 2: Portfolio Pessoal</figcaption>
+                    <div class="tech-icons">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                        </div>
+                </figure>
+                 <a href="https://github.com/dsanches06/M2_Projeto_Final.git" target="_blank">
+                <figure class="destaque">
+                    <img src="https://placehold.co/400x300" alt="Projeto 3">
+                    </a>
+                    <figcaption>Projeto 3: App de Tarefas</figcaption>
+                    <div class="tech-icons">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
+                        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
+                        </div>
+                </figure>
+            </div>
+        </section>    
+            <!-- Secção Contactos -->
+            <section id="contacto">
+                <div class="contacto-container">
+                <h2>Contactos</h2>
+                <!-- Formulário de contacto -->
+                <form id="formContacto" onsubmit="enviarForm(event)">
+                    <!-- Campo nome -->
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" required placeholder="O teu nome">
+
+                    <!-- Campo email -->
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required placeholder="exemplo@email.com">
+
+                    <!-- Campo assunto com opções -->
+                    <label for="assunto">Assunto:</label>
+                    <select id="assunto" name="assunto">
+                        <option value="Recrutamento">Recrutamento</option>
+                        <option value="Freelance">Freelance</option>
+                        <option value="Outro">Outro</option>
+                    </select>
+
+                    <!-- Campo mensagem -->
+                    <label for="mensagem">Mensagem:</label>
+                    <textarea id="mensagem" name="mensagem" rows="5" required minlength="10" placeholder="Escreva aqui a sua proposta..."></textarea>
+
+                    <!-- Botão de envio -->
+                    <button type="submit">Enviar Mensagem 🚀</button>
+                </form>
+                </div>
+            </section>
+
+            <!-- Informações de contacto e mapa -->
+            <div class="mapa-contactos">
+                <!-- Lista de informações de contacto -->
+                <ul class="info-localizacao">
+                    <li>📍 Lisboa, Portugal</li>
+                    <li>📧 teu@email.com</li>
+                    <li>📞 910000000</li>
+                </ul>
+
+                <!-- Mapa do Google Maps incorporado -->
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3111.1234567890!2d-8.000000!3d39.000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd00000000000000%3A0xabcdef1234567890!2sLisboa!5e0!3m2!1spt-PT!2spt!4v0000000000000" 
+                    loading="lazy">
+                </iframe>
+            </div>
+    </main>
+
+    <!-- Rodapé com ícones de redes sociais -->
+    <footer>
+        <div class="footer-icons">
+            <!-- LinkedIn -->
+            <a href="https://www.linkedin.com" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" alt="LinkedIn">
+            </a>
+            <!-- GitHub -->
+            <a href="https://github.com/AbelPinto229" target="_blank" rel="noopener noreferrer">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" alt="GitHub">
+            </a>
+            <!-- Email -->
+            <a href="mailto:teu@email.com">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" alt="Email">
+            </a>
+        </div>
+        <p>© 2025 Desenvolvido por Abel Pinto.</p>
+    </footer>
+</body>
+</html>
