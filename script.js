@@ -14,7 +14,7 @@ if (formContacto) { // Verifica se o formulário existe no DOM
         // 1. 'service_br404kd' -> ID do serviço que configuraste no EmailJS
         // 2. 'YOUR_TEMPLATE_ID' -> ID do template que configuraste no EmailJS (substitui pelo teu)
         // 3. 'this' -> refere-se ao formulário atual e permite enviar todos os campos automaticamente
-        emailjs.sendForm('service_br404kd', 'template_w2az56o', this)
+        emailjs.sendForm('service_br404kd', 'template_7czq1cl', this)
         .then(function() { // Se o envio for bem-sucedido
             alert("Obrigado pelo contacto! Responderei em breve."); // Mensagem de confirmação para o utilizador
             formContacto.reset(); // Limpa todos os campos do formulário
