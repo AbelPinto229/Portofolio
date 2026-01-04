@@ -26,7 +26,9 @@ Este é um projeto **estático**, desenvolvido apenas com HTML, CSS e JavaScript
    ```bash
    git clone https://github.com/abelpinto229/Portofolio.git
 
-   🧠 Principais Decisões Tomadas e Justificação
+
+🧠 Principais Decisões Tomadas e Justificação
+
 1. Utilização de HTML, CSS e JavaScript puros
 
 Foi tomada a decisão de utilizar apenas tecnologias base da web, sem frameworks, para:
