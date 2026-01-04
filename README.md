@@ -59,7 +59,7 @@ Boa visualização em computadores, tablets e smartphones
 
 Acessibilidade em diferentes tamanhos de ecrã
 
-4. Portfólio como Identidade Profissional
+### 4. Portfólio como Identidade Profissional
 
 O portfólio foi pensado não apenas como um exercício técnico, mas como:
 
@@ -69,15 +69,13 @@ Um cartão de visita digital
 
 Um espaço para mostrar evolução e projetos futuros
 
-🛠 Tecnologias Utilizadas
+### 🛠 Tecnologias Utilizadas
 
 HTML5
 
 CSS3
 
 JavaScript
-
-📌 Observações Finais
 
 Este projeto tem como objetivo demonstrar competências iniciais em desenvolvimento web front-end, boas práticas de organização de código e capacidade de apresentação profissional online.
 
