@@ -27,9 +27,9 @@ Este é um projeto **estático**, desenvolvido apenas com HTML, CSS e JavaScript
    git clone https://github.com/abelpinto229/Portofolio.git
 
 
-🧠 Principais Decisões Tomadas e Justificação
+##🧠 Principais Decisões Tomadas e Justificação
 
-1. Utilização de HTML, CSS e JavaScript puros
+### 1. Utilização de HTML, CSS e JavaScript puros
 
 Foi tomada a decisão de utilizar apenas tecnologias base da web, sem frameworks, para:
 
@@ -39,7 +39,8 @@ Garantir simplicidade e fácil manutenção
 
 Assegurar compatibilidade com qualquer navegador moderno
 
-2. Estrutura Simples e Clara
+
+### 2. Estrutura Simples e Clara
 
 O site foi organizado em secções bem definidas (Sobre Mim, Formação, Projetos e Contactos), permitindo:
 
@@ -49,7 +50,8 @@ Melhor experiência do utilizador
 
 Leitura clara da informação por recrutadores ou avaliadores
 
-3. Design Responsivo
+
+### 3. Design Responsivo
 
 Foi aplicada uma abordagem responsiva para garantir:
 
