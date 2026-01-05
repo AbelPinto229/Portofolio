@@ -1,8 +1,5 @@
-/* =========================
-   Variáveis Globais
-========================= */
 :root {
-    --navbar-height: 80px; /* Altura aproximada da navbar, usada para scroll margin */
+    --navbar-height: 100px; /* Altura da navbar */
 }
 
 /* =========================
@@ -25,14 +22,18 @@ html, body {
 }
 
 body {
-    display: flex;
-    flex-direction: column;
     min-height: 100vh;
     font-family: sans-serif;
     line-height: 1.6;
     color: #333;
     background-color: #d3d3d3;
     overflow-x: hidden;
+}
+
+.page {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 html {
@@ -57,7 +58,7 @@ main section {
     box-sizing: border-box;
     width: 100%;
     background-color: #d3d3d3;
-    scroll-margin-top: var(--navbar-height);
+
 }
 
 main section:first-of-type {
@@ -81,13 +82,14 @@ main section video {
    Header e Navbar
 ========================= */
 header {
-    position: relative;
+    position: sticky;
+    width: 100%;
+    height: var(--navbar-height); /* Define a altura fixa do header */
 }
 
 .navbar {
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+    position: fixed;
+    width: 100%;
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
