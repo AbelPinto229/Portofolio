@@ -1,5 +1,5 @@
 :root {
-    --navbar-height: 100px; /* Altura da navbar */
+    --navbar-height: 60px; /* Altura da navbar */
 }
 
 /* =========================
@@ -19,7 +19,9 @@ html, body {
     padding: 0;
     width: 100%;
     height: 100%;
+    scroll-padding-top: 100px; /* igual à altura da navbar */
 }
+
 
 body {
     min-height: 100vh;
@@ -48,7 +50,9 @@ main {
     padding: 0;
     margin: 0;
     flex-grow: 1;
+    padding-top: 60px; /* mesma altura da navbar */
 }
+
 
 main section {
     display: flex;
@@ -83,8 +87,6 @@ main section video {
 ========================= */
 header {
     position: sticky;
-    width: 100%;
-    height: var(--navbar-height); /* Define a altura fixa do header */
 }
 
 .navbar {
@@ -157,6 +159,7 @@ header {
         background: none;
         border: none;
         cursor: pointer;
+        scroll-padding-top: 60px; /* igual à altura da navbar */
     }
 
     /* Esconde nav-left e nav-right por padrão */
